@@ -1,9 +1,12 @@
 RUN A CICD PIPELINE FOR TERRAFORM TO INIT,FORMAT,VALIDATE,PLAN AND 
-APPLY. 
-1.JENKINS INSTALLATION 
+APPLY.
+=========================================================================================================================================
+1.JENKINS INSTALLATION
+===========================================================================================================================================
 First install Jenkins in a server 
 Create a ec2 instance and connect to that instance then switch to root user by using 
- (sudo su –) command. 
+===========================================================================================================================================
+(sudo su –) command. 
 install Jenkins using this commands 
 sudo wget -O /usr/share/keyrings/jenkins-keyring.asc \ 
  hƩ ps://pkg.jenkins.io/debian/jenkins.io-2023.key 
@@ -13,14 +16,21 @@ echo "deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc]" \
 sudo apt-get update 
 sudo apt-get install Jenkins 
 Jenkins requires java to run
-
+===========================================================================================================================================
 2.INSTALL JAVA 
+========================================================================================================================================
 apt install openjdk-17-jdk -y : This command used to install java 
+
 java -version : To check the java version 
-aŌ er installing Jenkins and java in the server we need to restart the Jenkins server 
+
+aŌ er installing Jenkins and java in the server we need to restart the Jenkins server
+
 systemctl restart Jenkins : to restart the Jenkins 
+
 systemctl status Jenkins : to check the Jenkins status , whether its running or not 
+
 3. LOGIN INTO JENKINS DASHBOARD 
+
 To access Jenkins. We need to allow inbound traffic on PORT 8080 in the AWS security 
 group. 
 Copy the public ip of the server and paste in the browser with port number 8080{Example : 
@@ -216,7 +226,7 @@ AŌ er select ng pipline click on ok .It opens Configuration in that select pipe
 Select pipeline script from SCM in the definition 
 
 SCM: Git 
-Repository URL: https://github.com//terraform_cicd.git
+Repository URL:https://github.com/umashanvi/umashanvi.git
 Credentials : give your Credential
 
 Branch Specifier: main ( branch name where the files are stored )
